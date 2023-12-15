@@ -1,0 +1,49 @@
+@startuml e
+actor User
+participant System
+database Database
+
+User -> System: Request Registration
+activate System
+System -> Database: Check Availability
+activate Database
+Database --> System: Availability Status
+deactivate Database
+alt Available
+  System -> Database: Create Account
+  activate Database
+  Database --> System: Account Created
+  deactivate Database
+else Unavailable
+  System --> User: Display Error Message
+end
+
+User -> System: Login
+activate System
+System -> Database: Validate Credentials
+activate Database
+Database --> System: Validation Result
+deactivate Database
+alt Successful
+  System --> User: Login Successful
+else Unsuccessful
+  System --> User: Display Error Message
+end
+
+User -> System: View Profile
+activate System
+System -> Database: Retrieve Profile Information
+activate Database
+Database --> System: Profile Data
+deactivate Database
+System --> User: Display Profile Information
+
+User -> System: Add Book
+activate System
+System -> Database: Save Book Information
+activate Database
+Database --> System: Book Added
+deactivate Database
+System --> User: Book Added Successfully
+deactivate System
+@enduml

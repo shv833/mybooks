@@ -1,0 +1,20 @@
+@startuml q
+|User|
+start
+:Request Registration;
+if (Valid Information?) then (Yes)
+  :Create Account;
+else (No)
+  :Display Error Message;
+endif
+:Login;
+if (Successful?) then (Yes)
+  :View Profile;
+  :Add Book;
+else (No)
+  :Display Error Message;
+  stop
+endif
+:Logout;
+stop
+@enduml

@@ -1,0 +1,43 @@
+@startuml sa
+
+class MDApp
+class ScreenManager
+class Screen
+class WelcomeScreen
+class MainScreen
+class LoginScreen
+class SignupScreen
+class MDFlatButton
+class MDDialog
+class MDLabel
+class MDRaisedButton
+class MDTextField
+class MDTextButton
+
+MDApp --> ScreenManager
+ScreenManager --> Screen
+Screen --> WelcomeScreen
+Screen --> MainScreen
+Screen --> LoginScreen
+Screen --> SignupScreen
+WelcomeScreen --> MDLabel
+WelcomeScreen --> MDRaisedButton
+WelcomeScreen --> MDRaisedButton
+LoginScreen --> MDLabel
+LoginScreen --> MDTextField
+LoginScreen --> MDTextField
+LoginScreen --> MDRaisedButton
+LoginScreen --> MDTextButton
+SignupScreen --> MDLabel
+SignupScreen --> MDTextField
+SignupScreen --> MDTextField
+SignupScreen --> MDTextField
+SignupScreen --> MDRaisedButton
+SignupScreen --> MDTextButton
+MainScreen --> BoxLayout
+MainScreen --> MDLabel
+MainScreen --> MDLabel
+MainScreen --> MDRaisedButton
+MainScreen --> MDTextField
+
+@enduml

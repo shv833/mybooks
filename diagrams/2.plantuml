@@ -1,0 +1,17 @@
+@startuml s
+left to right direction
+
+actor User as user
+rectangle System {
+  usecase "Register"
+  usecase "Login"
+  usecase "ViewProfile"
+  usecase "AddBook"
+
+  user --|> Register
+  user --|> Login
+  user --|> ViewProfile
+  user --|> AddBook
+}
+
+@enduml

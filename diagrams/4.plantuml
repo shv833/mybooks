@@ -1,0 +1,17 @@
+@startuml qw
+class User {
+  +username: String
+  +password: String
+  +email: String
+  +register()
+  +login(): boolean
+  +viewProfile()
+  +addBook(book: Book)
+}
+
+class Book {
+  +info: String
+}
+
+User --|> Book : has 1..n
+@enduml
